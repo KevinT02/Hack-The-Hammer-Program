@@ -1,9 +1,10 @@
-from Crypto.Cipher import DES
-from Crypto import Random
-key = b'-8B key-'
-iv = Random.new().read(DES.block_size)
-cipher = DES.new(key, DES.MODE_OFB, iv)
-plaintext = b'sona si latine loqueris '
-msg = iv + cipher.encrypt(plaintext)
-print (msg)
-
+from cryptography.fernet import Fernet
+my_str = input()
+my_str_as_bytes = str.encode(my_str)
+type(my_str_as_bytes)
+key = Fernet.generate_key()
+cipher_suite = Fernet(key)
+cipher_text = cipher_suite.encrypt(my_str_as_bytes)
+plain_text = cipher_suite.decrypt(cipher_text)
+print(cipher_text)
+print(plain_text)
