@@ -40,3 +40,7 @@ print(len(contents))
 groups = round(len(contents)/16)
 for i in range(0,groups):
   print(random(1,3))
+  
+  
+  
+  [''.join(e) for e in grouper(x, 8)]
