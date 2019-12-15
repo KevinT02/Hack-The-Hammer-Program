@@ -1,1 +1,11 @@
+from Crypto.Cipher import DES3
+from Crypto import Random
+
+code = 'lol lol lol lol '
+key = DES3.new(code, DES3.MODE_OFB,  Random.new().read(DES3.block_size))
+plaintext = 'sona si latine loqueris '
+msg =  key.encrypt(plaintext)
+
+b = key.decrypt(msg)
+print (msg)
 
