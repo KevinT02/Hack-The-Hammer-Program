@@ -6,3 +6,4 @@ cipher = DES.new(key, DES.MODE_OFB, iv)
 plaintext = b'sona si latine loqueris '
 msg = iv + cipher.encrypt(plaintext)
 print (msg)
+
